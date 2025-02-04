@@ -1,5 +1,5 @@
 import { linksText } from "./Data";
-import ReusableLink from "./reusableLink";
+import ReusableLink from "./ReusableLink";
 
 export default function Header() {
   return (
