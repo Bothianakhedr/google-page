@@ -58,16 +58,51 @@ i {
   outline: none;
 }
 .searchIcon {
-  left: 355px;
-  top: 18px;
+  position: absolute;
+  left: 355px; 
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
 }
 
+
 .searchIconsBox {
-  right: 356px;
-  bottom: 17px;
+  position: absolute;
+  right: 355px; 
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
+.searchIconsBox i,
+.searchIcon  i {
+  font-size: 16px; 
+  width: 20px !important;
+  height: 20px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.searchIcon i{
+  color:#9aa0a6;
+}
+.searchIconsBox i{
+  color: #1f1f1f;
+}
+
+/* .searchIconsBox i {
+  width: 20px;
+  height: 20px;
+display: inline-block;} */
+
 .search-input {
-  background-color: #ecedef;
+  background-color: #ecebebaf;
+  width: 50%;
 }
 .search-input:hover {
   background-color: #c1c6cea2;
@@ -112,7 +147,12 @@ i {
   background-color: #f8f9fa;
   color: #202124;
 }
-
+p a{
+  color: #1a0dab;
+}
+p a:hover{
+  text-decoration: underline;
+}
 .google-offer {
   margin-top: 15px;
   font-size: 13px;
@@ -140,3 +180,72 @@ i {
   font-size: 14px;
   margin-right: 15px;
 }
+
+
+@media only screen and (max-width: 600px) {
+  .searchIcon {
+    left: 50px;
+    top: 17px;
+  }
+  .search-input {
+width: 90%;
+margin: auto;
+}
+.searchIconsBox {
+  right: 56px;
+  bottom: 17px;
+}
+}
+
+/* @media only screen and (min-width: 600px) {
+  .search-input {
+    width: 90%;
+    margin: auto;
+    }
+    .searchIconsBox {
+      right: 70px;
+      bottom: 17px;
+    }
+    .searchIcon {
+      left: 60px;
+      top: 17px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+  .searchIcon {
+    left: 70px;
+    top: 17px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .searchIcon {
+    left: 170px;
+    top: 17px;
+  }
+  .searchIconsBox {
+    right: 180px;
+    bottom: 17px;
+  }
+  .search-input {
+    width: 70%;
+    margin: auto;
+    }
+}
+@media only screen and (min-width: 1200px) {
+  .searchIcon {
+    left: 220px;
+    top: 17px;
+  }
+  .searchIconsBox {
+    right: 230px;
+    bottom: 17px;
+  }
+  .search-input {
+    width: 45%;
+    margin: auto;
+    }
+}
+
+ */
