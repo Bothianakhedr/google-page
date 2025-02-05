@@ -1,6 +1,26 @@
+import { useState } from "react";
 import googleImage from "../../assets/image/Googlelogo_color_272x92dp.png";
+import { sentences } from "../Buttons/data";
+import List from "../List/List";
+import Button from "../Buttons/Button";
 
 export default function GoogleContent() {
+  const [term, setTerm] = useState("");
+  const [filteredSentences, setFilteredSentences] = useState([]);
+
+  function searchWord(e) {
+    let inputValue = e.target.value; // input value
+    setTerm(inputValue);
+    if (inputValue == "") {
+      setFilteredSentences([]);
+      return;
+    }
+    let res = sentences.filter((sentence) => {
+      return sentence.toLowerCase().includes(inputValue.toLowerCase());
+    });
+    setFilteredSentences(res);
+    console.log(filteredSentences);
+  }
   return (
     <>
       <div className="img text-center my-1 ">
@@ -11,6 +31,8 @@ export default function GoogleContent() {
           <i className="fa-solid fa-magnifying-glass    "></i>
         </div>
         <input
+          value={term}
+          onChange={searchWord}
           type="text"
           // placeholder="search Google or type a URL"
           className="ps-5 search-input   rounded-5 p-3 mx-auto border-0  d-flex justify-content-between"
@@ -30,6 +52,8 @@ export default function GoogleContent() {
           </div>
         </div>
       </div>
+      <Button/>
+      <List items={filteredSentences} />
     </>
   );
 }
